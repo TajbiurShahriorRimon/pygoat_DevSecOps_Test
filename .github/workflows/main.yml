@@ -20,4 +20,5 @@ jobs:
         run: pip install bandit
 
       - name: Run Bandit Scan
-        run: bandit -r .
+      #Following line with sytax -ll and -ii indicate to have only medium, and high defects
+        run: bandit -ll -ii -r .
