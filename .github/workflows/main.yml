@@ -21,4 +21,12 @@ jobs:
 
       - name: Run Bandit Scan
       #Following line with sytax -ll and -ii indicate to have only medium, and high defects
-        run: bandit -ll -ii -r .
+        run: bandit -ll -ii -r . -f json -o bandit-report.json
+
+      - name: Upload Atifact
+        uses: actions/upload-artifact@v3
+        # this segment of code will always execute even if the above code fails (it will fail since there are vulnerabilities.)
+        if: always()
+        with:
+          name: bandit-findings
+          path: bandit/report.json
