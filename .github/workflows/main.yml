@@ -24,7 +24,7 @@ jobs:
         run: bandit -ll -ii -r . -f json -o bandit-report.json
 
       - name: Upload Atifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         # this segment of code will always execute even if the above code fails (it will fail since there are vulnerabilities.)
         if: always()
         with:
