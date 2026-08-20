@@ -39,10 +39,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: Setup Docker
-        uses: docker-practice/actions-setup-docker@v1
-        with:
-          docker-version: '20.10.7'
+      #- name: Setup Docker
+        #uses: docker-practice/actions-setup-docker@v1
+        #with:
+          #docker-version: '20.10.7'
 
       - name: Build Docker Image
         run: docker build -f Dockerfile -t myapp:latest .
